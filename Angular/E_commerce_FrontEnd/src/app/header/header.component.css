@@ -1,0 +1,104 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e3d58; /* Dark Blue Background */
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-right: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #00aaff; /* Light Blue on Hover */
+  }
+  
+  /* Search Bar Styling */
+  .search-bar input {
+    width: 300px;
+    padding: 8px;
+    border: 2px solid #00aaff;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .search-bar input:focus {
+    border-color: #006f8e; /* Dark Blue on Focus */
+  }
+  
+  /* Auth Buttons */
+  .auth-buttons {
+    display: flex;
+  }
+  
+  .auth-buttons .btn {
+    background-color: #00aaff;
+    color: white;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .auth-buttons .btn:hover {
+    background-color: #006f8e; /* Darker Blue on Hover */
+  }
+  
+  .auth-buttons .btn:focus {
+    outline: none;
+  }
+
+input{
+    color: black;
+}
+
+
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+  
+    .nav-links li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .search-bar input {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .auth-buttons {
+      width: 100%;
+      justify-content: space-between;
+    }
+  
+    .auth-buttons .btn {
+      width: 48%;
+    }
+}
