@@ -1,0 +1,50 @@
+@if(ShowPopUp){
+    <a routerLink='/alert'><app-alert [ShowPopUp]="ShowPopUp" (changePopUp)="onChange($event)"/></a>
+} 
+@else{
+<section class="form-container">
+    <div class="form">
+      <h2>Create a New Account</h2>
+      <form action="#" method="POST" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="Choose a username" formControlName="userName" required>
+          @if (form.get('userName')?.hasError('minlength') ) {
+            <span>
+                Username is Invalid
+            </span>
+          }
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email"  formControlName="email"  required>
+          @if (form.get('email')?.hasError('email') && form.get('email')?.touched) {
+            <span>
+                Please enter valid email
+            </span>
+          }
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Choose a password" formControlName="password" 
+           required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" formControlName="confirmPassword"   required>
+          @if (form.get('confirmPassword')?.hasError('passwordMismatch') && form.get('confirmPassword')?.touched) {
+            <span>
+                Passwords do not match
+            </span>
+          }
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn">Sign Up</button>
+        </div>
+        <div class="form-footer">
+          <span>Already have an account? <a routerLink="/login">Login</a></span>
+        </div>
+      </form>
+    </div>
+</section>
+ } 
